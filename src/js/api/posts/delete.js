@@ -1,7 +1,7 @@
 import { apiPath } from "../constants.js";
 import { headers } from "../headers.js";
 
-export async function deletePost(id) {
+export async function deletePost(id, index) {
   const response = await fetch(`${apiPath}/social/posts/${id}`, {
     method: "delete",
     headers: headers(),
