@@ -1,12 +1,5 @@
-console.log("Intentional Syntax Error");
-
-let i = 5;
-
-i = 3;
-console.log(i);
-
-export const secondeTimer = () => {
+export function wait(ms = 1000, resolveWith = "Hello World") {
   return new Promise((resolve) => {
-    setTimeout(resolve, 1000);
+    setTimeout(() => resolve(resolveWith), ms);
   });
-};
+}
