@@ -1,5 +1,6 @@
-export function wait(ms = 1000, resolveWith = "Hello World") {
-  return new Promise((resolve) => {
-    setTimeout(() => resolve(resolveWith), ms);
-  });
-}
+export default {
+  color: "red",
+  texture: "juicy",
+  animalProduct: false,
+  rating: 7,
+};
