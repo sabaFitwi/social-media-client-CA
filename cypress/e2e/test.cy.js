@@ -1,6 +1,5 @@
 describe("social media app", () => {
   // The login form validates user inputs correctly based on API restrictions
-
   it("the login form validates user inputs correctly based on API restrictions", () => {
     cy.visit("/");
     cy.wait(800);
@@ -17,14 +16,12 @@ describe("social media app", () => {
       .should("be.visible")
       .type("saba.samuel@noroff.no")
       .should("have.value", "saba.samuel@noroff.no");
-
     cy.get(
       "form#loginForm  div.modal-body  div.form-floating > input[type='password']"
     )
       .should("be.visible")
       .type("Tobi1234")
       .should("have.value", "Tobi1234");
-
     cy.get("form#loginForm > div.modal-footer > button.btn-success")
       .contains("Login")
       .should("be.visible")
@@ -32,7 +29,6 @@ describe("social media app", () => {
     cy.then(() => expect(window.localStorage.getItem("token")).to.be.null);
   });
   // The create item form validates user inputs correctly based on API restrictions
-
   it(" create item form validates user inputs correctly based on API restrictions", () => {
     cy.wait(800);
     cy.visit("http://127.0.0.1:5500/?view=post");
@@ -40,16 +36,13 @@ describe("social media app", () => {
       .contains("New Post")
       .should("be.visible")
       .click({ force: true });
-
     cy.get("form#postForm  input[name='title']")
       .should("be.visible")
       .type("Cypress testing")
       .should("have.value", "Cypress testing");
-
     cy.get("form#postForm   input[name='tags']")
       .should("be.visible")
       .type("cypress");
-
     cy.get("form#postForm    input[name='media']")
       .should("be.visible")
       .type("https://picsum.photos/id/111/4400/2656");
@@ -57,7 +50,6 @@ describe("social media app", () => {
     cy.get("form#postForm     textarea[name ='body']")
       .should("be.visible")
       .type("Test cypress");
-
     cy.get("form#postForm > div.col-12 > button.btn-success")
       .should("be.visible")
       .click();
