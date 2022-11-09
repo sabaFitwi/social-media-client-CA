@@ -1,5 +1,6 @@
 describe("social media app", () => {
-  //Loging in the test user that is allready registered
+  // The login form validates user inputs correctly based on API restrictions
+
   it("the login form validates user inputs correctly based on API restrictions", () => {
     cy.visit("/");
     cy.wait(800);
@@ -30,8 +31,9 @@ describe("social media app", () => {
       .click({ force: true });
     cy.then(() => expect(window.localStorage.getItem("token")).to.be.null);
   });
-  // Create function testing starts here
-  it("the create item form validates user inputs correctly based on API restrictions", () => {
+  // The create item form validates user inputs correctly based on API restrictions
+
+  it(" create item form validates user inputs correctly based on API restrictions", () => {
     cy.wait(800);
     cy.visit("http://127.0.0.1:5500/?view=post");
     cy.get("#footerActions > a.btn")
@@ -41,8 +43,8 @@ describe("social media app", () => {
 
     cy.get("form#postForm  input[name='title']")
       .should("be.visible")
-      .type("Cypress generated test post")
-      .should("have.value", "Cypress generated test post");
+      .type("Cypress testing")
+      .should("have.value", "Cypress testing");
 
     cy.get("form#postForm   input[name='tags']")
       .should("be.visible")
@@ -50,14 +52,12 @@ describe("social media app", () => {
 
     cy.get("form#postForm    input[name='media']")
       .should("be.visible")
-      .type("https://picsum.photos/id/718/2274/1440");
+      .type("https://picsum.photos/id/111/4400/2656");
 
     cy.get("form#postForm     textarea[name ='body']")
       .should("be.visible")
-      .type(
-        "This post was generated using cypress test tool. it will be deleted so the API is not cluttered up with test posts"
-      );
-    /**uncomment the section below you run the create test.*/
+      .type("Test cypress");
+
     cy.get("form#postForm > div.col-12 > button.btn-success")
       .should("be.visible")
       .click();
