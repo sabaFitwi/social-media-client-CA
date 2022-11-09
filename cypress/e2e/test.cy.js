@@ -27,6 +27,7 @@ describe("social media app", () => {
       .should("be.visible")
       .click({ force: true });
     cy.then(() => expect(window.localStorage.getItem("token")).to.be.null);
+    cy;
   });
   // The create item form validates user inputs correctly based on API restrictions
   it(" create item form validates user inputs correctly based on API restrictions", () => {
@@ -34,7 +35,7 @@ describe("social media app", () => {
     cy.visit("http://127.0.0.1:5500/?view=post");
     cy.get("#footerActions > a.btn")
       .contains("New Post")
-      .should("be.visible")
+      .should("be.visible", { force: true })
       .click({ force: true });
     cy.get("form#postForm  input[name='title']")
       .should("be.visible")
