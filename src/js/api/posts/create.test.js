@@ -40,7 +40,6 @@ describe("create", () => {
     expect(data.body).toEqual(BODY);
     expect(data.media).toEqual(MEDIA);
     expect(data.tags).toEqual(TAGS);
-    expect(MEDIA).toMatch(/\.(jpg|jpeg|png|webp|avif|gif)(?=\?.+|$)/);
   });
 
   it("Returns undefined in response to an HTTP 404 error", async () => {
