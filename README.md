@@ -228,8 +228,7 @@ Update `eslint.config.json` with configuration data for linting Cypress tests
   }
 }
 ```
-
-#### Add script to package.json
+Add script to package.json
 
 ```
 {
@@ -238,13 +237,6 @@ Update `eslint.config.json` with configuration data for linting Cypress tests
     "test-e2e": "cypress open"}
 }
 ```
-
-
-
-
-
-## Usage
-
 
 
 ## Project Status
