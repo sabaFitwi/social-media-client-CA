@@ -7,16 +7,12 @@ To improve the quality of an existing environment by establishing useful workflo
 
 ## Table of Contents
 * [General Info](#general-information)
-* [Technologies Used](#technologies-used)
-* [Features](#features)
-* [Screenshots](#screenshots)
+* [Project Requirments](#project-requirments)
 * [Setup](#setup)
 * [Usage](#usage)
 * [Project Status](#project-status)
-* [Room for Improvement](#room-for-improvement)
 * [Acknowledgements](#acknowledgements)
-* [Contact](#contact)
-<!-- * [License](#license) -->
+
 
 
 ## General Information
@@ -51,24 +47,29 @@ The following features must be automatically tested with end-to-end tests:
 
 ## Setup
 To start the setup process first download/ clone the repo  to your destination folder and open this file in your editor and initialise a new Git repository 
-```git init```
+
+`git init`
 
 Install dependencies
 
-```npm i```
+`npm i`
+
 Build CSS files from SASS
 
-```npm run build```
+`npm run build`
 
-### Configuring Prettier
+### Configuring formatter
+
 Install prettier as dev dependency
 
-```npm install --save-dev prettier```
+`npm install --save-dev prettier`
 
-### Install ESLint as a dev dependency
+Install ESLint as a dev dependency
 
 `npm install eslint --save-dev `
-#### Setting up ESLint
+
+Setting up ESLint
+
 `npx eslint --init`
 
 ```
@@ -79,7 +80,8 @@ Install prettier as dev dependency
 ✔ Where does your code run? · browser
 ✔ What format do you want your config file to be in? · JSON 
 ```
-#### Add lint to package file
+
+Add lint to package file
 
 ```
 "scripts": {
@@ -87,10 +89,12 @@ Install prettier as dev dependency
   "lint-fix": "eslint src/**/*.js --cache --fix"
 },
 ```
-### Creating pre-commit hooks
+Creating pre-commit hooks
 
 `npx mrm@2 lint-staged`
-#### Add lint-stage to package file
+
+Add lint-stage to package file
+
 ```"lint-staged": {
     "*.js": [
       "prettier --write",
@@ -106,7 +110,7 @@ Install prettier as dev dependency
   ``` 
 
 
- #### Add settings for VSC, .vscode/settings.json
+ Add settings for VSC, .vscode/settings.json
 
 
 ```
@@ -133,11 +137,14 @@ Install prettier as dev dependency
 }
 ```
 
-#### Installing Jest
+
+### Unit Testing
+Installing Jest
 
 `npm i -D jest@29.2.0`
 
-#### update our test script within package.json
+ update our test script within package.json
+
 ```
 {
   "scripts": {
@@ -145,10 +152,12 @@ Install prettier as dev dependency
     "test-unit": "jest"}
 }
 ```
-#### Install the eslint-plugin-jest package
+Install the eslint-plugin-jest package
+
 `npm i -D eslint-plugin-jest`
 
-enable this plugin within our .eslintrc.json
+Enable this plugin within our .eslintrc.json
+
 ```
 {
   "env": {
@@ -174,19 +183,24 @@ enable this plugin within our .eslintrc.json
 }
 ```
 
-#### Install and configure babel to work with jest
+Install and configure babel to work with jest
+
 `npm -D install @babel/core@7.19.3 @babel/preset-env@7.19.4`
 
- #### create babel.config.json and Add 
+Create `babel.config.json` and Add 
  ```
  {
   "presets": [["@babel/preset-env", { "targets": { "node": "current" } }]]
 }
 ```
-### Install Cypress
+
+### End To End Test
+
+Install Cypress
 
 `npm i -D cypress@10.7.0 eslint-plugin-cypress@2.12.1`
-####  Update eslint.config.json with configuration data for linting Cypress tests
+
+Update `eslint.config.json` with configuration data for linting Cypress tests
 
 ```
 {
@@ -216,6 +230,7 @@ enable this plugin within our .eslintrc.json
 ```
 
 #### Add script to package.json
+
 ```
 {
   "scripts": {
@@ -236,9 +251,8 @@ enable this plugin within our .eslintrc.json
 Project is not a long run project therefore it will not continue. 
 
 
-
 ## Acknowledgements
-- This project was on [This tutorial](https://www.youtube.com/watch?v=7gF_0WqeQW8) and (https://www.youtube.com/watch?v=Jwld2q9ydt4).
+- This project was helped with [Workflow CA 2022](https://www.youtube.com/watch?v=7gF_0WqeQW8) and [Workflow CA Testing](https://www.youtube.com/watch?v=Jwld2q9ydt4).
 
 - Many thanks to Noroff 
 
