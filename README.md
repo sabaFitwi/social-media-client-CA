@@ -9,7 +9,6 @@ To improve the quality of an existing environment by establishing useful workflo
 * [General Info](#general-information)
 * [Project Requirments](#project-requirments)
 * [Setup](#setup)
-* [Usage](#usage)
 * [Project Status](#project-status)
 * [Acknowledgements](#acknowledgements)
 
